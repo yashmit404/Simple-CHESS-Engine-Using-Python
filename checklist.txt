@@ -1,0 +1,39 @@
+Phase 1: The Basics
+
+    M̶a̶k̶i̶n̶g̶ t̶h̶e̶ B̶o̶a̶r̶d̶ G̶r̶i̶d̶
+
+    S̶t̶o̶r̶i̶n̶g̶ t̶h̶e̶ G̶a̶m̶e̶ I̶n̶f̶o̶r̶m̶a̶t̶i̶o̶n̶
+
+    Moving a Piece
+
+    Switching Turns
+
+Phase 2: How Pieces Move
+
+    Moving Pawns
+
+    Moving Rooks, Bishops, and Queens (and Stopping at Pieces)
+
+    Moving Knights and Kings
+
+    Not Capturing Your Own Pieces
+
+Phase 3: Special Chess Rules
+
+    Pawns Turning into Queens
+
+    Castling (Moving King and Rook)
+
+    The Special Pawn Capture (En Passant)
+
+Phase 4: Keeping the King Safe
+
+    Finding Which Squares are Attacked
+
+    Stopping Moves that Get Your King Killed
+
+Phase 5: Ending the Game
+
+    Checkmate (Win/Loss)
+
+    Stalemate (Draw/Tie)
