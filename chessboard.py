@@ -48,7 +48,7 @@ def draw_pieces(screen, board):
     for row in range(ROWS):
         for col in range(COLS):
             piece = board[row][col]
-            if piece != "0":
+            if piece != 0 and piece != "0" and piece != "--":
 
                 screen.blit(IMAGES[piece], pygame.Rect(col * SQUARE_SIZE + 1, row * SQUARE_SIZE + 1, SQUARE_SIZE - 2, SQUARE_SIZE - 2))
 
@@ -58,6 +58,44 @@ def main_loop():
     pygame.display.set_caption("My Chess Game")
 
     gs = main.GameState()
+    load_images()
+
+    selected_square = ()
+    player_clicks = []
+
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type ==pygame.QUIT:
+                running = False
+
+            elif event.type ==pygame.MOUSEBUTTONDOWN:
+                data, output = pygame.mouse.get_pos()
+                col = data // SQUARE_SIZE
+                row = output // SQUARE_SIZE
+
+                if selected_square ==(row, col):
+                    selected_square = ()
+                    player_clicks = []
+                else:
+                    selected_square = (row, col)
+                    player_clicks.append(selected_square)
+
+                if len(player_clicks) ==2:
+                    start = player_clicks[0]
+                    end = player_clicks[1]
+
+                    gs.make_move(start, end)
+
+                    selected_square = ()
+                    player_clicks = []
+
+        draw_board(screen)
+        draw_pieces(screen, gs.board)
+        pygame.display.flip()
+
+    pygame.quit()
+    sys.exit()
 
     load_images()
 
@@ -70,6 +108,7 @@ def main_loop():
                 value, result = pygame.mouse.get_pos()
                 col = value // SQUARE_SIZE
                 row = result // SQUARE_SIZE
+                
                 print("You clicked on:", gs.board[row][col])
 
         draw_board(screen)
